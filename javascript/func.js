@@ -37,28 +37,42 @@ function updateTime() {
 }
 
 function updateCity(event) {
-  let cityTimeZone = event.target.value;
-  if (cityTimeZone === "current") {
-    cityTimeZone = moment.tz.guess();
-  }
-  let cityName = cityTimeZone.replace("_", " ").split("/")[1];
-  let cityTime = moment().tz(cityTimeZone);
-  let citiesElement = document.querySelector("#cities");
+  let selectCityTimeZone = event.target.value;
+  let selectCityName = selectCityTimeZone.replace("_", " ").split("/")[1];
+  let selectCityTime = moment().tz(selectCityTimeZone);
+  let citiesElement = document.querySelector(".cities");
   citiesElement.innerHTML = `
-  <div class="city">
-    <div>
-      <h2>${cityName}</h2>
-      <div class="date">${cityTime.format("MMMM	Do YYYY")}</div>
+   <div class="cities">
+        <div class="cityA">
+          <div>
+            <h2>${selectCityTimeZone}</h2>
+            <div class="date">${selectCityTime.format("MMMM Do YYYY")}</div>
+          </div>
+          <div class="time">${selectCityTime.format(
+            "h:mm:ss"
+          )}<small>${selectCityTime.format("A")}<small></div>
+        </div>
+        <div class="cityD">
+          <div>
+            <h3>Durban</h3>
+            <div class="date">00 April 2023</div>
+          </div>
+          <div class="time">00:00 <small>pm</small></div>
+        </div>
+        <div class="cityM">
+          <div>
+            <h4>Melbourne</h4>
+            <div class="date">00 April 2023</div>
+          </div>
+          <div class="time">00:00 <small>pm</small></div>
+        </div>
+      </div>
     </div>
-    <div class="time">${cityTime.format("h:mm:ss")} <small>${cityTime.format(
-    "A"
-  )}</small></div>
-  </div>
   `;
 }
 
 updateTime();
 setInterval(updateTime, 1000);
 
-let citiesSelectElement = document.querySelector("#city");
+let citiesSelectElement = document.querySelector("#selectCity");
 citiesSelectElement.addEventListener("change", updateCity);
