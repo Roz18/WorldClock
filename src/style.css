@@ -1,62 +1,89 @@
 .container {
-  background-color: antiquewhite;
-  max-width: 600px;
+  color: aliceblue;
+  font-family: "ABeeZee", sans-serif;
+  font-family: "Satisfy", cursive;
+  background-image: url("https://c4.wallpaperflare.com/wallpaper/556/382/458/fantasy-art-artwork-fan-art-science-fiction-wallpaper-preview.jpg");
+  background-size: cover;
+  max-width: 400px;
   margin: auto;
   padding: 20px;
   border-radius: 15px;
   display: block;
+  text-shadow: rgb(0, 0, 0) 3px 3px 10px;
 }
 h1 {
   text-align: center;
-  font-size: large;
+  font-weight: lighter;
+  font-size: xx-large;
   margin: 0;
   padding: 10px;
 }
 select {
   display: block;
-  padding: 10px;
-  border-radius: 13px;
+  padding: 5px;
+  border-radius: 5px;
   width: 100%;
   margin: 0;
   margin-bottom: 20px;
 }
 h2 {
-  font-size: medium;
+  font-size: larger;
   margin: 0;
+  font-weight: lighter;
 }
 h3 {
-  font-size: medium;
+  font-size: larger;
   margin: 0;
+  font-weight: lighter;
 }
 h4 {
   margin: 0;
-  font-size: medium;
+  font-size: large;
+  font-weight: lighter;
 }
 #cityA {
   display: flex;
   justify-content: space-between;
   padding: 10px;
+  border-bottom: double;
+  border-color: silver;
 }
 #cityD {
   display: flex;
   justify-content: space-between;
   padding: 10px;
+  border-bottom: double;
+  border-color: silver;
 }
 #cityM {
   display: flex;
   justify-content: space-between;
   padding: 10px;
 }
+.dropdown {
+  padding: 5px;
+  border-radius: 5px;
+
+  font-family: "Handlee", cursive;
+  background-color: rgba(26, 30, 33, 0.501);
+}
 .time {
   font-size: medium;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
 }
 .time small {
   font-size: x-small;
+  font-weight: lighter;
 }
 .date {
   font-size: medium;
+  font-weight: lighter;
 }
 
 footer {
   text-align: center;
+  font-family: "ABeeZee", sans-serif;
+  font-family: "Satisfy", cursive;
 }
