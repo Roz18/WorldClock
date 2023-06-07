@@ -10,6 +10,7 @@ h1 {
   text-align: center;
   font-size: large;
   margin: 0;
+  padding: 10px;
 }
 select {
   display: block;
@@ -34,17 +35,23 @@ h4 {
 .cityA {
   display: flex;
   justify-content: space-between;
+  padding: 10px;
 }
 .cityD {
   display: flex;
   justify-content: space-between;
+  padding: 10px;
 }
 .cityAl {
   display: flex;
   justify-content: space-between;
+  padding: 10px;
 }
 .time {
-  font-size: small;
+  font-size: medium;
+}
+.time small {
+  font-size: x-small;
 }
 .date {
   font-size: medium;
