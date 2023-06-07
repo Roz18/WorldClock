@@ -1,5 +1,5 @@
 function updateTime() {
-  let cityAElement = document.querySelector(".cityA");
+  let cityAElement = document.querySelector("#cityA");
   if (cityAElement) {
     let cityADateElement = cityAElement.querySelector(".date");
     let cityATimeElement = cityAElement.querySelector(".time");
@@ -11,11 +11,11 @@ function updateTime() {
     );
   }
 
-  let cityDElement = document.querySelector(".cityD");
+  let cityDElement = document.querySelector("#cityD");
   if (cityDElement) {
     let cityDDateElement = cityDElement.querySelector(".date");
     let cityDTimeElement = cityDElement.querySelector(".time");
-    let cityDTime = moment().tz("Africa/Johannesburg");
+    let cityDTime = moment().tz("Canada/Atlantic");
 
     cityDDateElement.innerHTML = cityDTime.format("MMMM	Do YYYY");
     cityDTimeElement.innerHTML = cityDTime.format(
@@ -23,7 +23,7 @@ function updateTime() {
     );
   }
 
-  let cityMElement = document.querySelector(".cityM");
+  let cityMElement = document.querySelector("#cityM");
   if (cityMElement) {
     let cityMDateElement = cityMElement.querySelector(".date");
     let cityMTimeElement = cityMElement.querySelector(".time");
@@ -40,34 +40,17 @@ function updateCity(event) {
   let selectCityTimeZone = event.target.value;
   let selectCityName = selectCityTimeZone.replace("_", " ").split("/")[1];
   let selectCityTime = moment().tz(selectCityTimeZone);
-  let citiesElement = document.querySelector(".cities");
+  let citiesElement = document.querySelector("#cities");
   citiesElement.innerHTML = `
-   <div class="cities">
-        <div class="cityA">
+  <div id ="cityA">
           <div>
-            <h2>${selectCityTimeZone}</h2>
+            <h2>${selectCityName}</h2>
             <div class="date">${selectCityTime.format("MMMM Do YYYY")}</div>
           </div>
-          <div class="time">${selectCityTime.format(
-            "h:mm:ss"
-          )}<small>${selectCityTime.format("A")}<small></div>
+          <div class="time">${selectCityTime.format("h:mm:ss")}   
+          <small>${selectCityTime.format("A")}<small></div>
         </div>
-        <div class="cityD">
-          <div>
-            <h3>Durban</h3>
-            <div class="date">00 April 2023</div>
-          </div>
-          <div class="time">00:00 <small>pm</small></div>
-        </div>
-        <div class="cityM">
-          <div>
-            <h4>Melbourne</h4>
-            <div class="date">00 April 2023</div>
-          </div>
-          <div class="time">00:00 <small>pm</small></div>
-        </div>
-      </div>
-    </div>
+        
   `;
 }
 
